@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>MakeYourOz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sunset-orange: #FF7043;
+      --lagoon-blue: #48CAE4;
+      --palm-green: #558B2F;
+      --banana-cream: #FFF9C4;
+      --coral-red: #F06292;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #FFFBF5;
+    }
+
+    header {
+      background-color: var(--palm-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      position: absolute;
+      left: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 60px;
+      vertical-align: middle;
+    }
+
+    .logotxt {
+      margin-left: 10px;
+      color: white;
+    }
+
+    .menu {
+      height: 50px;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: larger;
+      padding: 0 1rem;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .menu a.shaking:hover {
+      background-color: var(--lagoon-blue);
+    }
+
+    .menu a.stirring:hover {
+      background-color: var(--palm-green);
+    }
+
+    .menu a.floating:hover {
+      background-color: var(--banana-cream);
+      color: #333;
+    }
+
+    .menu a.building:hover {
+      background-color: var(--coral-red);
+    }
+
+    .recommand-table {
+      padding: 2rem;
+      background-color: #fff;
+      max-width: 1800px;
+      margin: 2rem auto;
+    }
+
+    .recommand-table h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .recommand-table hr {
+      border: none;
+      height: 2px;
+      background-color: var(--sunset-orange);
+      margin-bottom: 1.5rem;
+      width: 100px;
+    }
+
+    .cocktail-scroll {
+      display: flex;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      max-width: 1800px;
+      margin: 0 auto;
+      justify-content: space-between;
+      overflow-x: visible;
+    }
+
+    .cocktail-card {
+      flex: 1 1 calc(25% - 1rem);
+      max-width: calc(25% - 1rem);
+      background-color: var(--banana-cream);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+    }
+
+    .cocktail-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+    }
+
+    .cocktail-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .card-top {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .card-top img {
+      width: 100px;
+      height: 100px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .ingredients {
+      flex: 1;
+    }
+
+    .ingredients h3 {
+      margin: 0 0 0.5rem 0;
+      color: var(--sunset-orange);
+    }
+
+    .ingredients ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .description {
+      max-width: 150px;
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+
+    .site-footer {
+      background-color: #FBDED7;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--banana-cream);
+    }
+    /*모바일 대응형*/
+  @media (max-width: 1024px) {
+    .cocktail-card {
+      flex: 1 1 calc(50% - 1rem);
+      max-width: calc(50% - 1rem);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    header {
+      padding: 1rem;
+    }
+  
+    .logo {
+      position: static;
+      transform: none;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+  
+    .logotxt {
+      margin-left: 0;
+      font-size: 1.2rem;
+    }
+  
+    .menu {
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+  
+    .menu a {
+      font-size: 1rem;
+      padding: 0.5rem 0.8rem;
+      height: auto;
+      border-radius: 6px;
+    }
+  
+    .cocktail-scroll {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .cocktail-card {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  
+    .card-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .card-top img {
+      width: 80%;
+      height: auto;
+      margin-bottom: 0.8rem;
+    }
+  
+    .ingredients {
+      max-width: 100%;
+    }
+  
+    .description {
+      max-width: 100%;
+      margin-top: 0.5rem;
+    }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="MakeYourOz" />
+        <h2 class="logotxt">MakeYourOz</h2>
+    </a>
+    <nav class="menu">
+      <a href="shaking.html" class="shaking">Shaking</a>
+      <a href="Stirring.html" class="stirring">Stirring</a>
+      <a href="Floating.html" class="floating">Floating</a>
+      <a href="building.html" class="building">Building</a>
+    </nav>
+  </header>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Cocktail Lab. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
