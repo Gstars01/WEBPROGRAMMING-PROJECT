@@ -83,202 +83,101 @@
       background-color: var(--coral-red);
     }
 
-    .recommand-table {
-      padding: 2rem;
-      background-color: #fff;
-      max-width: 1800px;
+    .page-name {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 1000px;
       margin: 2rem auto;
-    }
-
-    .recommand-table h2 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .recommand-table hr {
-      border: none;
-      height: 2px;
-      background-color: var(--sunset-orange);
-      margin-bottom: 1.5rem;
-      width: 100px;
-    }
-
-    .cocktail-scroll {
       display: flex;
-      gap: 1rem;
-      padding-bottom: 1rem;
-      max-width: 1800px;
-      margin: 0 auto;
-      justify-content: space-between;
-      overflow-x: visible;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
     }
 
     .cocktail-card {
-      flex: 1 1 calc(25% - 1rem);
-      max-width: calc(25% - 1rem);
-      background-color: var(--banana-cream);
-      border-radius: 12px;
-      padding: 1rem;
+      display: flex;
+      background-color: #fff;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.2s;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: block;
+      max-height: 220px;
     }
 
     .cocktail-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+      background-color: #d7f3fb;
     }
 
     .cocktail-card img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 12px 12px 0 0;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .card-top {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .card-top img {
-      width: 100px;
-      height: 100px;
-      border-radius: 12px;
+      width: 220px;
+      height: 100%;
       object-fit: cover;
       flex-shrink: 0;
     }
 
-    .ingredients {
-      flex: 1;
+    .card-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding: 1rem;
+      width: 100%;
     }
 
-    .ingredients h3 {
+    .info {
+      display: flex;
+      flex-direction: column;
+      flex: 2;
+    }
+
+    .info h3 {
       margin: 0 0 0.5rem 0;
-      color: var(--sunset-orange);
     }
 
-    .ingredients ul {
+    .ingredients {
       margin: 0;
       padding-left: 1.2rem;
-      color: #555;
-      font-size: 0.9rem;
+      list-style: none;
+    }
+
+    .ingredients li {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
     }
 
     .description {
-      max-width: 150px;
-      color: #666;
-      font-size: 0.9rem;
-      line-height: 1.3;
-    }
-
-    .site-footer {
-      background-color: #FBDED7;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-links {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--banana-cream);
-    }
-    /*모바일 대응형*/
-  @media (max-width: 1024px) {
-    .cocktail-card {
-      flex: 1 1 calc(50% - 1rem);
-      max-width: calc(50% - 1rem);
-    }
-  }
-  
-  @media (max-width: 600px) {
-    header {
-      padding: 1rem;
-    }
-  
-    .logo {
-      position: static;
-      transform: none;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-    }
-  
-    .logotxt {
-      margin-left: 0;
-      font-size: 1.2rem;
-    }
-  
-    .menu {
-      height: auto;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem;
-    }
-  
-    .menu a {
-      font-size: 1rem;
-      padding: 0.5rem 0.8rem;
-      height: auto;
-      border-radius: 6px;
-    }
-  
-    .cocktail-scroll {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .cocktail-card {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
-  
-    .card-top {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .card-top img {
-      width: 80%;
-      height: auto;
-      margin-bottom: 0.8rem;
-    }
-  
-    .ingredients {
-      max-width: 100%;
-    }
-  
-    .description {
-      max-width: 100%;
       margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+      flex: 2;
     }
-}
 
+    .rating {
+      color: #f39c12;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    footer {
+      background-color: #f5d3cb;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -295,15 +194,76 @@
       <a href="building.html" class="building">Building</a>
     </nav>
   </header>
+  <h2 class="page-name">Stirring</h2>
+
+  <div class="container">
+    <a href="#" class="cocktail-card">
+  <img src="images/martini.webp" alt="Martini" />
+  <div class="card-content">
+    <div class="info">
+      <h3>Martini</h3>
+      <ul class="ingredients">
+        <li>진 60ml</li>
+        <li>드라이 베르무트 10ml</li>
+        <li>올리브 또는 레몬 필</li>
+      </ul>
+    </div>
+    <div class="score">
+      <div class="description">
+        클래식한 드라이 칵테일로, 강한 도수와 깔끔한 맛이 특징입니다.
+      </div>
+      <div class="rating">★ ★ ★ ★ ★</div>
+    </div>
+  </div>
+</a>
+
+<a href="#" class="cocktail-card">
+  <img src="images/negroni.webp" alt="Negroni" />
+  <div class="card-content">
+    <div class="info">
+      <h3>Negroni</h3>
+      <ul class="ingredients">
+        <li>진 30ml</li>
+        <li>캄파리 30ml</li>
+        <li>스위트 베르무트 30ml</li>
+      </ul>
+    </div>
+    <div class="score">
+      <div class="description">
+        쌉싸름한 맛과 진한 풍미가 매력적인 이탈리아식 클래식 칵테일입니다.
+      </div>
+      <div class="rating">★ ★ ★ ★ ☆</div>
+    </div>
+  </div>
+</a>
+
+<a href="#" class="cocktail-card">
+  <img src="images/manhattan.webp" alt="Manhattan" />
+  <div class="card-content">
+    <div class="info">
+      <h3>Manhattan</h3>
+      <ul class="ingredients">
+        <li>라이 위스키 50ml</li>
+        <li>스위트 베르무트 20ml</li>
+        <li>앙고스트라 비터 2 dashes</li>
+      </ul>
+    </div>
+    <div class="score">
+      <div class="description">
+        묵직하고 강렬한 맛으로, 위스키 애호가에게 사랑받는 칵테일입니다.
+      </div>
+      <div class="rating">★ ★ ★ ★ ★</div>
+    </div>
+  </div>
+</a>
+
+
+
+  </div>
 
   <footer class="site-footer">
     <div class="footer-content">
       <p>&copy; 2025 Cocktail Lab. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Contact</a>
-      </div>
     </div>
   </footer>
 </body>

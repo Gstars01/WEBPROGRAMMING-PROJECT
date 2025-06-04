@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <title>MakeYourOz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --sunset-orange: #FF7043;
@@ -83,278 +82,231 @@
       background-color: var(--coral-red);
     }
 
-    .recommand-table {
-      padding: 2rem;
-      background-color: #fff;
-      max-width: 1800px;
+    .page-name {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 1000px;
       margin: 2rem auto;
-    }
-
-    .recommand-table h2 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .recommand-table hr {
-      border: none;
-      height: 2px;
-      background-color: var(--sunset-orange);
-      margin-bottom: 1.5rem;
-      width: 100px;
-    }
-
-    .cocktail-scroll {
       display: flex;
-      gap: 1rem;
-      padding-bottom: 1rem;
-      max-width: 1800px;
-      margin: 0 auto;
-      justify-content: space-between;
-      overflow-x: visible;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
     }
 
     .cocktail-card {
-      flex: 1 1 calc(25% - 1rem);
-      max-width: calc(25% - 1rem);
-      background-color: #d7f3fb;
-      border-radius: 12px;
-      padding: 1rem;
+      display: flex;
+      background-color: #fff;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.2s;
       text-decoration: none;
       color: inherit;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: block;
+      max-height: 220px;
     }
 
     .cocktail-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+      background-color: #d7f3fb;
     }
 
     .cocktail-card img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 12px 12px 0 0;
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .card-top {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .card-top img {
-      width: 100px;
-      height: 100px;
-      border-radius: 12px;
+      width: 220px;
+      height: 100%;
       object-fit: cover;
       flex-shrink: 0;
     }
 
-    .ingredients {
-      flex: 1;
-    }
-
-    .ingredients h3 {
-      margin: 0 0 0.5rem 0;
-      color: black;
-    }
-
-    .ingredients ul {
-      margin: 0;
-      padding-left: 1.2rem;
-      color: #555;
-      font-size: 0.9rem;
-    }
-
-    .description {
-      max-width: 150px;
-      color: #666;
-      font-size: 0.9rem;
-      line-height: 1.3;
-    }
-
-    .site-footer {
-      background-color: #FBDED7;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-links {
-      margin-top: 1rem;
+    .card-content {
       display: flex;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
       gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--banana-cream);
-    }
-    /*모바일 대응형*/
-  @media (max-width: 1024px) {
-    .cocktail-card {
-      flex: 1 1 calc(50% - 1rem);
-      max-width: calc(50% - 1rem);
-    }
-  }
-  
-  @media (max-width: 600px) {
-    header {
       padding: 1rem;
-    }
-  
-    .logo {
-      display: flex;
-      position: absolute;
-      left: 2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      text-decoration: none;
+      width: 100%;
     }
 
-  
-    .logotxt {
-      margin-left: 0;
-      font-size: 1.2rem;
-    }
-  
-    .menu {
-      height: auto;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem;
-    }
-  
-    .menu a {
-      font-size: 1rem;
-      padding: 0.5rem 0.8rem;
-      height: auto;
-      border-radius: 6px;
-    }
-  
-    .cocktail-scroll {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .cocktail-card {
-      flex:100%;
-      max-width: 100%;
-    }
-  
-    .card-top {
-     display: flex;
-     gap: 1rem;
-     align-items: center; /* 세로 정렬을 중앙으로 */
-    }
-
-    card-top img {
-     width: 300px;
-     height: 300px;
-     border-radius: 12px;
-     object-fit: cover;
-     flex-shrink: 0;
-    }
-
-    ingredients {
-     flex: 1;
-    }
-
-  
-    .description {
-      max-width: 100%;
-      margin-top: 0.5rem;
-    }
-
-}
-    .page-name{
-        color: #666;
-    }
-
-    .vertical-container {  
+    .info {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center; 
-      min-height: 60vh;
+      flex: 2;
+    }
+
+    .info h3 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    .ingredients {
+      margin: 0;
+      padding-left: 1.2rem;
+      list-style: none;
+    }
+
+    .ingredients li {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .description {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+      flex: 2;
+    }
+
+    .rating {
+      color: #f39c12;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    footer {
+      background-color: #f5d3cb;
       text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
     }
-
-    .container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-
   </style>
 </head>
 <body>
 
   <header>
     <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="MakeYourOz" />
-        <h2 class="logotxt">MakeYourOz</h2>
+      <img src="images/logo.png" alt="MakeYourOz">
+      <h2 class="logotxt">MakeYourOz</h2>
     </a>
     <nav class="menu">
         <a href="shaking.html" class="shaking">Shaking</a>
         <a href="Stirring.html" class="stirring">Stirring</a>
         <a href="Floating.html" class="floating">Floating</a>
         <a href="building.html" class="building">Building</a>
-      </nav>
+    <nav>
   </header>
 
-  <section class="vertical-container">
-        <h2 class="page-name">Shaking</h2>
-        <hr>
-        <div class="container">
-            <a href="#" class="cocktail-card">
-                <div class="card-top">
-                  <img src="images/cosmopolitan.png" alt="cosmopolitan">
-                  <div class="ingredients">
-                    <h3>cosmopolitan</h3>
-                    <ul>
-                      <li>보드카</li>
-                      <li>트리플 섹</li>
-                      <li>크렌베리 주스</li>
-                      <li>라임 주스</li>
-                    </ul>
-                  </div>
-                </div>
-            </a>              
-        </div>
-  </section>
+  <h2 class="page-name">Shaking</h2>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p>&copy; 2025 Cocktail Lab. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Contact</a>
+  <div class="container">
+    <a href="#" class="cocktail-card">
+      <img src="images/cosmopolitan.png" alt="cosmopolitan" />
+      <div class="card-content">
+        <div class="info">
+          <h3>Cosmopolitan</h3>
+          <ul class="ingredients">
+            <li>보드카 45ml</li>
+            <li>트리플 섹 15ml</li>
+            <li>크렌베리 주스 30ml</li>
+            <li>라임 주스 15ml</li>
+          </ul>
+        </div>
+        <div class="score">
+          <div class="description">
+            상큼하고 달콤한 맛이 특징이며, 주로 여성들에게 인기 있는 시그니처 칵테일입니다.
+          </div>
+          <div class="rating">★ ★ ★ ★ ☆</div>
+        </div>
       </div>
-    </div>
+    </a>
+
+    <a href="#" class="cocktail-card">
+      <img src="images/daiquiri.png" alt="daiquiri" />
+      <div class="card-content">
+        <div class="info">
+          <h3>Daiquiri</h3>
+          <ul class="ingredients">
+            <li>화이트 럼 45ml</li>
+            <li>라임 주스 25ml</li>
+            <li>설탕 시럽 15ml</li>
+          </ul>
+        </div>
+        <div class="score">
+          <div class="description">
+            클래식하면서도 상큼한 럼 기반 칵테일로, 여름에 특히 인기 있습니다.
+          </div>
+          <div class="rating">★ ★ ★ ★ ☆</div>
+        </div>
+      </div>
+    </a>
+    
+    <a href="#" class="cocktail-card">
+      <img src="images/whisky_sour.webp" alt="whiskey sour" />
+      <div class="card-content">
+        <div class="info">
+          <h3>Whiskey Sour</h3>
+          <ul class="ingredients">
+            <li>버번 위스키 45ml</li>
+            <li>레몬 주스 30ml</li>
+            <li>설탕 시럽 20ml</li>
+            <li>계란 흰자 (선택)</li>
+          </ul>
+        </div>
+        <div class="score">
+          <div class="description">
+            진한 위스키와 상큼한 레몬의 조화가 입안을 감도는 인기 칵테일입니다.
+          </div>
+          <div class="rating">★ ★ ★ ★ ★</div>
+        </div>
+      </div>
+    </a>
+    
+    <a href="#" class="cocktail-card">
+      <img src="images/pisco_sour.webp" alt="pisco sour" />
+      <div class="card-content">
+        <div class="info">
+          <h3>Pisco Sour</h3>
+          <ul class="ingredients">
+            <li>피스코 60ml</li>
+            <li>레몬 주스 30ml</li>
+            <li>설탕 시럽 20ml</li>
+            <li>계란 흰자 1개</li>
+            <li>비터스 몇 방울</li>
+          </ul>
+        </div>
+        <div class="score">
+          <div class="description">
+            남미 전통 칵테일로, 크리미한 거품과 새콤달콤한 맛이 특징입니다.
+          </div>
+          <div class="rating">★ ★ ★ ★ ☆</div>
+        </div>
+      </div>
+    </a>
+    
+    <a href="#" class="cocktail-card">
+      <img src="images/mai_tai.webp" alt="mai tai" />
+      <div class="card-content">
+        <div class="info">
+          <h3>Mai Tai</h3>
+          <ul class="ingredients">
+            <li>다크 럼 30ml</li>
+            <li>화이트 럼 30ml</li>
+            <li>오렌지 큐라소 15ml</li>
+            <li>라임 주스 30ml</li>
+            <li>오르지넬 시럽 15ml</li>
+          </ul>
+        </div>
+        <div class="score">
+          <div class="description">
+            열대과일향 가득한 트로피컬 칵테일로, 파티 분위기를 살려줍니다.
+          </div>
+          <div class="rating">★ ★ ★ ☆ ☆</div>
+        </div>
+      </div>
+    </a>
+</div>
+  
+  <footer>
+    &copy; 2025 MakeYourOz. All rights reserved.
   </footer>
+
 </body>
 </html>
