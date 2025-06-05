@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>MakeYourOz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sunset-orange: #FF7043;
+      --lagoon-blue: #48CAE4;
+      --palm-green: #558B2F;
+      --banana-cream: #FFF9C4;
+      --coral-red: #F06292;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #FFFBF5;
+    }
+
+    header {
+      background-color: var(--sunset-orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      position: absolute;
+      left: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 60px;
+      vertical-align: middle;
+    }
+
+    .logotxt {
+      margin-left: 10px;
+      color: white;
+    }
+
+    .menu {
+      height: 50px;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: larger;
+      padding: 0 1rem;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .menu a.shaking:hover {
+      background-color: var(--lagoon-blue);
+    }
+
+    .menu a.stirring:hover {
+      background-color: var(--palm-green);
+    }
+
+    .menu a.floating:hover {
+      background-color: var(--banana-cream);
+      color: #333;
+    }
+
+    .menu a.building:hover {
+      background-color: var(--coral-red);
+    }
+    
+    .container{
+      display: flex;
+      justify-content: center;
+    }
+    .cocktail-recipe {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fff6f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.section-title {
+  color: var(--sunset-orange);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.recipe-section {
+  background-color: #ffffff;
+  border-left: 6px solid var(--lagoon-blue);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chapter-title {
+  color: var(--palm-green);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+  
+    .site-footer {
+      background-color: #FBDED7;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--banana-cream);
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="../images/logo.png" alt="MakeYourOz" />
+      <h2 class="logotxt">MakeYourOz</h2>
+    </a>
+    <nav class="menu">
+      <a href="shaking.html" class="shaking">Shaking</a>
+      <a href="Stirring.html" class="stirring">Stirring</a>
+      <a href="Floating.html" class="floating">Floating</a>
+      <a href="building.html" class="building">Building</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="art-top">
+        <div class="name">
+            <h2 class="cock-name">Margarita</h2>
+        </div>
+        <div class="cock-pick">
+          <img src="../images/margarita.png" alt="margarita">
+        </div>
+    </div>
+
+    <section class="cocktail-recipe">
+      <h3 class="section-title">How to Make a Margarita</h3>
+    
+      <div class="recipe-section">
+        <h4 class="chapter-title">Chapter 1: 준비하기</h4>
+        <p>테킬라 45ml, 라임 주스 15ml, 트리플 섹(오렌지 리큐어) 30ml, 소금, 라임 슬라이스, 얼음을 준비합니다.</p>
+      </div>
+    
+      <div class="recipe-section">
+        <h4 class="chapter-title">Chapter 2: 잔 장식</h4>
+        <p>라임 조각으로 칵테일 잔의 림을 문지른 후, 소금 접시에 굴려 테두리에 소금 림을 만듭니다.</p>
+      </div>
+    
+      <div class="recipe-section">
+        <h4 class="chapter-title">Chapter 3: 셰이킹</h4>
+        <p>셰이커에 얼음을 넣고, 테킬라, 라임 주스, 트리플 섹을 넣습니다. 뚜껑을 닫고 강하게 흔들어 차게 만듭니다.</p>
+      </div>
+    
+      <div class="recipe-section">
+        <h4 class="chapter-title">Chapter 4: 서빙</h4>
+        <p>차가워진 칵테일을 준비한 소금 림 잔에 걸러 붓습니다. 라임 슬라이스로 장식하여 마무리합니다.</p>
+      </div>
+    </section>
+    
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Cocktail Lab. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
